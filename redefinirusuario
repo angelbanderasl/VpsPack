@@ -1,11 +1,11 @@
 #!/bin/bash
-read -p "Nombre del usuario: " namer
- if cat /etc/passwd |grep $namer: > /dev/null
+read -p "Nombre del usuario: " name
+ if cat /etc/passwd |grep $name: > /dev/null
  then
  echo " "
  else
  clear
- echo "El usuario $namer no existe"
+ echo "El usuario $name no existe"
  exit
  fi
 clear
@@ -16,22 +16,22 @@ echo -e "\033[1;33mOpciones a modificar ?\033[1;30m
 read -p "opcion: " option
 if [ $option -eq 1 ]; then
 read -p "Cual es el nuevo limite de logins: " liml
-limite $namer $liml
+limite $name $liml
 exit 0
 fi
 
 if [ $option -eq 2 ]; then
 echo "Cual es la nueva fecha : formato AAAA/MM/DD"
 read -p ": " date
-chage -E $date $namer 2> /dev/null
-echo -e "\033[1;31mEl usuario $namer se desconectara el dia: $date\033[0m"
+chage -E $date $name 2> /dev/null
+echo -e "\033[1;31mEl usuario $name se desconectara el dia: $date\033[0m"
 exit
 fi
 if [ $option -eq 3 ]
 then
-read -p "Cual es la nueva contraseña para el usuario $namer: " senha
-(echo "$senha" ; echo "$senha" ) |passwd $namer > /dev/null 2>/dev/null
-echo "$senha" > /etc/VpsPackdir/senha/$namer
-echo "Nueva contraseña aplicada: $senha"
+read -p "Cual es la nueva contraseña para el usuario $name: " pass
+(echo "$pass" ; echo "$pass" ) |passwd $name > /dev/null 2>/dev/null
+echo "$pass" > /etc/VpsPackdir/senha/$name
+echo "Nueva contraseña aplicada: $pass"
 exit
 fi

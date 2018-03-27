@@ -5,36 +5,36 @@ clear
 
 
 echo -e "\033[1;33m1 \033[1;31m
-DIGITE UM HOST PARA CRIAR AS PAYLOADS GENERICAS! \033[1;33m
+DIGITE UN HOST PARA CREAR SUS PAYLOADS! \033[1;33m
 
 2 \033[1;31m
-DIGITE SEM HTTP//
-DIGITE APENAS A HOST"
+DIGITE SIN HTTP//
+DIGITE SU HOST"
 
 sleep 3s
 echo -e "\033[1;33m__________________________________________\033[1;32m"
-rm -rf /root/skeleton.txt 
-echo -e "\033[1;36mCRIADOR DE PAYLOADS"
+rm -rf /root/skeleton.txt
+echo -e "\033[1;36mCREADOR DE PAYLOADS"
 echo -e "\033[1;33m__________________________________________\033[0m"
-echo -e "\033[1;31mDIGITE O HOST\033[1;33m"
+echo -e "\033[1;31mDIGITE UN HOST\033[1;33m"
 read -p ": " valor1
 if [ "$valor1" = "" ]; then
-echo -e "\033[1;31mNao Digitou Nada!!!"
+echo -e "\033[1;31mNo a escrito Nada!!!"
 exit
 fi
-echo -e "\033[1;31mDIGITE SEU IP\033[1;33m"
+echo -e "\033[1;31mDIGITE SU IP\033[1;33m"
 read -p ": " valor2
 if [ "$valor2" = "" ]; then
 valor2="127.0.0.1"
 fi
-echo -e "\033[1;31mESCOLHA O METODO DE REQUISIÇÃO...\033[1;33m
-1-GET                           
+echo -e "\033[1;31mESCOJA UN METODO DE REQUEST...\033[1;33m
+1-GET
 2-CONNECT
-3-PUT                          
+3-PUT
 4-OPTIONS
-5-DELETE                     
+5-DELETE
 6-HEAD
-7-TRACE                      
+7-TRACE
 8-PROPATCH
 9-PATCH"
 read -p ": " valor3
@@ -70,7 +70,7 @@ req="PATCH"
 req="GET"
 ;;
 esac
-echo -e "\033[1;31mE POR ULTIMO, ESCOLHA O METODO DE INJEÇÃO!\033[1;33m
+echo -e "\033[1;31mPOR ULTIMO, ESCOJA UN METODO DE INJECCION!\033[1;33m
 1-realData
 2-netData
 3-raw"
@@ -99,7 +99,7 @@ sed -e "s;mip;$valor2;g" /tmp/es1 > /root/$valor1.txt
 testt=$(cat /root/$valor1.txt |egrep -o $valor1)
 if [ "$testt" = "" ]; then
 echo -e ""
-echo -e "\033[1;33mALGO DEU\033[1;36m ERRADO!\033[0m"
+echo -e "\033[1;33mALGO A\033[1;36m FALLADO!\033[0m"
 rm -rf /root/$valor1.txt
 rm -rf /tmp/es
 rm -rf /tmp/es1
@@ -109,7 +109,7 @@ rm -rf /tmp/esq2
 rm -rf /tmp/esq3
 sleep 5s
 else
-echo -e "\033[1;33mSUCESSO, ARQUIVO COM AS PAYLOADS CRIADO NA PASTA\033[1;36m /root/$valor1.txt\033[0m"
+echo -e "\033[1;33mCREADO, ARCHIVO CON LOS PAYLOADS CREADO EN LA RUTA\033[1;36m /root/$valor1.txt\033[0m"
 sleep 2s
 sleep 3s
 rm -rf /tmp/es
