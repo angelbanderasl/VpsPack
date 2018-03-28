@@ -631,7 +631,7 @@ case $opcao in
    read -p "Limite: " limite
    limite $user $limite;;
   3 | 03 )
-   criarusuario;;
+   crearusuario;;
   4 | 04 )
    removerexpirados;;
   5 | 05 )
@@ -681,6 +681,6 @@ case $opcao in
    rm -rf /bin/deletarusuario 2>/dev/null
    rm -rf /bin/redefinirusuario 2>/dev/null
    rm -rf /bin/limite 2>/dev/null
-   rm -rf /bin/criarusuario 2>/dev/null
+   rm -rf /bin/crearusuario 2>/dev/null
    rm -rf /bin/vpspack 2>/dev/null;;
 esac
