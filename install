@@ -70,4 +70,5 @@ echo -e "\033[1;32mwebmin \033[1;30mPara instalar webmin"
 echo -e "\033[1;32mModificada por: \033[1;30mAngel Banderas"
 echo -e "\033[1;32mInstalada \033[1;30mVersion 2.3\033[0m"
 echo -e "\033[1;32mPuedes actualizar con \033[1;30m@actualiza\033[0m"
+echo -e "\033[1;32mbanner \033[1;30mPara usar banner preconfigurado\033[0m"
 rm -rf install
