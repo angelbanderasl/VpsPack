@@ -1,0 +1,22 @@
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get install stunnel4 -y
+apt-get install stunnel -y
+openssl genrsa 1024 > stunnel.key
+openssl req -new -key stunnel.key -x509 -days 1000 -out stunnel.crt
+echo -ne '\n'
+echo -ne '\n'
+echo -ne '\n'
+echo -ne '\n'
+echo -ne '\n'
+echo -ne '\n'
+echo -ne '\n'
+cat stunnel.crt stunnel.key > stunnel.pem
+mv stunnel.pem /etc/stunnel/
+rm -rf /etc/stunnel/stunnel.conf 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/tools/stunnel.conf > /etc/stunnel/stunnel.conf
+chmod +x /etc/stunnel/stunnel.conf
+sed -i 's%ENABLED=0%ENABLED=1%g' /etc/default/stunnel4
+service stunnel4 start
+service stunnel4 restart
+reboot

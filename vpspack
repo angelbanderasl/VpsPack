@@ -27,7 +27,7 @@ fi
 
 function configurarsquid(){
 clear
-cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/	//' > /etc/so 
+cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/	//' > /etc/so
 if [ -f /etc/lsb-release ]
 then
 sistema=$(cat /etc/lsb-release |grep "DISTRIB_DESCRIPTION" | awk -F = '{print $2}' |sed 's/"//g')
@@ -53,7 +53,7 @@ echo -e "\033[1;31m-----> \033[1;37mBadVpn Puerto: \033[1;31m7300\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mIPS/Hosts SSH: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mHerramienta para agregar Hosts:\033[1;31m addhost\033[0m"
 
-function sshd_config(){ 
+function sshd_config(){
 echo 'Port 443
 PermitRootLogin yes
 PubkeyAuthentication yes
@@ -616,6 +616,7 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m22\033[0;32m] Ver_Puertos \033[1;30m(Ver puertos abiertos)\033[0;32m
 [\033[1;30m23\033[0;32m] New_Banner \033[1;30m(Banner preconfigurado)\033[0;32m
 [\033[1;30m24\033[0;32m] Webmin \033[1;30m(Instalar Webmin)\033[0;32m
+[\033[1;30m25\033[0;32m] Stunnel \033[1;30m(Instalar Stunnel)\033[0;32m
 [\033[1;30m1000\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0;32m"
 
 read -p ": " opcao
@@ -642,7 +643,7 @@ case $opcao in
   8 | 08 )
    removerlimite;;
   9 | 09 )
-   mudarnome;; 
+   mudarnome;;
   10)
    redefinirusuario;;
   11)
@@ -673,6 +674,8 @@ case $opcao in
    banner;;
    24)
    webmin;;
+   25)
+   stunnel;;
   1000)
    rm -rf /bin/speedtest.py 2>/dev/null
    rm -rf /bin/deletarusuario 2>/dev/null

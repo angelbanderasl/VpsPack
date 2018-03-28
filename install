@@ -57,8 +57,13 @@ chmod +x /bin/menu_backup
 rm -rf /bin/webmin 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/tools/webmin > /bin/webmin
 chmod +x /bin/webmin
+rm -rf /bin/stunnel 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/tools/stunnel > /bin/stunnel
+chmod +x /bin/stunnel
+rm -rf /bin/@actualiza 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/tools/@actualiza > /bin/@actualiza
+chmod +x /bin/@actualiza
 clear
-alias @actualiza='wget https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/install && bash install'
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"
 echo -e "\033[1;32mwebmin \033[1;30mPara instalar webmin"
